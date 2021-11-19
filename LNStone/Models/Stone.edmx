@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="LNStoneDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Stone">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Stone Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Cord Price" Type="float" Nullable="false" />
+          <Property Name="Amount of Stone" Type="float" Nullable="false" />
+          <Property Name="Price per Stone" Type="float" Nullable="false" />
+          <Property Name="Diameter of Stone" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="LNStoneDbModelStoreContainer">
+          <EntitySet Name="Stone" EntityType="Self.Stone" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LNStoneDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Stone">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Stone_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Cord_Price" Type="Double" Nullable="false" />
+          <Property Name="Amount_of_Stone" Type="Double" Nullable="false" />
+          <Property Name="Price_per_Stone" Type="Double" Nullable="false" />
+          <Property Name="Diameter_of_Stone" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="LNStoneDbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Stone" EntityType="Self.Stone" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LNStoneDbModelStoreContainer" CdmEntityContainer="LNStoneDbEntities">
+          <EntitySetMapping Name="Stone">
+            <EntityTypeMapping TypeName="LNStoneDbModel.Stone">
+              <MappingFragment StoreEntitySet="Stone">
+                <ScalarProperty Name="Diameter_of_Stone" ColumnName="Diameter of Stone" />
+                <ScalarProperty Name="Price_per_Stone" ColumnName="Price per Stone" />
+                <ScalarProperty Name="Amount_of_Stone" ColumnName="Amount of Stone" />
+                <ScalarProperty Name="Cord_Price" ColumnName="Cord Price" />
+                <ScalarProperty Name="Stone_Name" ColumnName="Stone Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

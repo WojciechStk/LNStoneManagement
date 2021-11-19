@@ -1,0 +1,785 @@
+﻿<UserControl x:Class="LNStone.Views.LN_Calculator"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LNStone.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="700" Background="#c6e9af">
+
+    <Grid Margin="10,10,10,10" Grid.IsSharedSizeScope="True" >
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+
+
+        <!-- Row 0 -->
+
+        <TextBlock Text="Calculator"
+                   Grid.Row="0"
+                   Grid.ColumnSpan="5"
+                   FontSize="20"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Margin="5,5,5,5"
+                   Padding="2"
+                   Width="auto" />
+
+        <!-- Row 1 -->
+
+        <TextBlock Text="Stone Name"
+                   Grid.Row="1"
+                   Grid.Column="0"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Margin="5,5"
+                   Padding="2"
+                   />
+
+        <TextBlock Text="Diameter"
+                   Grid.Row="1"
+                   Grid.Column="1"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Margin="5,5"
+                   Padding="2"
+                   />
+
+        <TextBlock Text="Price Per Stone"
+                   Grid.Row="1"
+                   Grid.Column="3"
+                   
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Margin="5,5"
+                   Padding="2"
+                   />
+
+        <TextBlock Text="Total Price"
+                   Grid.Row="1"
+                   Grid.Column="4"
+                   
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Margin="5,5"
+                   Padding="2"
+                   />
+
+        <TextBlock Text="Quantity"
+                   Grid.Row="1"
+                   Grid.Column="2"
+                   
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Margin="5,5"
+                   Padding="2"
+                   />
+
+        <ComboBox Name="cmbQuantity0"
+                  VerticalAlignment="Center"
+                  Width="40" 
+                  Grid.Row="2"
+                  Grid.Column="2"
+                  HorizontalAlignment="Center"
+                  Margin="5,5"
+                  Height="auto"
+                  Padding="2" 
+                  
+                  />
+
+        <ComboBox Name="cmbQuantity1"
+                  VerticalAlignment="Center"
+                  Width="40" 
+                  Grid.Row="3"
+                  Grid.Column="2"
+                  HorizontalAlignment="Center"
+                  Margin="5,5"
+                  Height="25"
+                  Padding="2"
+                  />
+
+        <ComboBox Name="cmbQuantity2"
+                  VerticalAlignment="Center"
+                  Width="40" 
+                  Grid.Row="4"
+                  Grid.Column="2"
+                  HorizontalAlignment="Center"
+                  Margin="5,5"
+                  Height="25"
+                  Padding="2"
+                  />
+
+        <ComboBox Name="cmbQuantity3"
+                  VerticalAlignment="Center"
+                  Width="40" 
+                  Grid.Row="5"
+                  Grid.Column="2"
+                  HorizontalAlignment="Center"
+                  Margin="5,5"
+                  Height="25"
+                  Padding="2"
+                  />
+
+        <ComboBox Name="cmbQuantity4"
+                  VerticalAlignment="Center"
+                  Width="40" 
+                  Grid.Row="6"
+                  Grid.Column="2"
+                  HorizontalAlignment="Center"
+                  Margin="5,5"
+                  Height="25"
+                  Padding="2"
+                  />
+
+        <ComboBox Name="cmbQuantity5"
+                  VerticalAlignment="Center"
+                  Width="40" 
+                  Grid.Row="7"
+                  Grid.Column="2"
+                  HorizontalAlignment="Center"
+                  Margin="5,5"
+                  Height="25"
+                  Padding="2"
+                  />
+
+        <ComboBox Name="cmbQuantity6"
+                  VerticalAlignment="Center"
+                  Width="40" 
+                  Grid.Row="8"
+                  Grid.Column="2"
+                  HorizontalAlignment="Center"
+                  Margin="5,5"
+                  Height="25"
+                  Padding="2"
+                  />
+
+        <ComboBox Name="cmbQuantity7"
+                  VerticalAlignment="Center"
+                  Width="40" 
+                  Grid.Row="9"
+                  Grid.Column="2"
+                  HorizontalAlignment="Center"
+                  Margin="5,5"
+                  Height="25"
+                  Padding="2"
+                  />
+
+        <ComboBox Name="cmbQuantity8"
+                  VerticalAlignment="Center"
+                  Width="40" 
+                  Grid.Row="10"
+                  Grid.Column="2"
+                  HorizontalAlignment="Center"
+                  Margin="5,5"
+                  Height="25"
+                  Padding="2"
+                  />
+
+        <ComboBox Name="cmbQuantity9"
+                  VerticalAlignment="Center"
+                  Width="40" 
+                  Grid.Row="11"
+                  Grid.Column="2"
+                  HorizontalAlignment="Center"
+                  Margin="5,5"
+                  Height="25"
+                  Padding="2"
+                  />
+
+
+
+        <!-- Row 2 -->
+
+        <ComboBox Name="cmbStone0"
+                  VerticalAlignment="Center"
+                  Width="200" 
+                  DisplayMemberPath="Stone_Name"
+                  SelectedValuePath="Id"
+                  SelectedValue="{Binding Id}"
+                  Grid.Row="2"
+                  Grid.Column="0"
+                  HorizontalAlignment="Center"
+                  Margin="5,5"
+                  SelectionChanged="cmbStone0_SelectionChanged"
+                  Height="25"
+                  Padding="2"
+                  
+                  />
+
+        <TextBox Name="txtDiameterOfStone0"
+                 Grid.Column="1"
+                 Grid.Row="2"
+                 HorizontalAlignment="Center"
+                 Height="23"
+                 Margin="5,5"
+                 VerticalAlignment="Center"
+                 Width="50"
+                 Padding="2"
+                 IsReadOnly="True"
+                 />
+
+        <TextBox Name="txtPricePerStone0"
+                 Grid.Column="3"
+                 Grid.Row="2"
+                 HorizontalAlignment="Center"
+                 Height="23"
+                 Margin="5,5"
+                 VerticalAlignment="Center"
+                 Width="120"
+                 Padding="2"
+                 IsReadOnly="True"
+                 />
+
+        <TextBox Name="txtTotal0"
+                 Grid.Column="4"
+                 Grid.Row="2"
+                 HorizontalAlignment="Center"
+                 Height="23"
+                 Margin="5,5"
+                 VerticalAlignment="Center"
+                 Width="120"
+                 Padding="2"
+                 IsReadOnly="True"
+                 
+                 />
+
+        <!-- Row 3 -->
+
+        <ComboBox Name="cmbStone1" 
+                  VerticalAlignment="Center"
+                  Width="200" 
+                  DisplayMemberPath="Stone_Name"
+                  SelectedValuePath="Id"
+                  SelectedValue="{Binding Id}"
+                  Grid.Row="3"
+                  Grid.Column="0"
+                  HorizontalAlignment="Center"
+                  Margin="5,5"
+                  SelectionChanged="cmbStone1_SelectionChanged"
+                  Height="25"
+                  Padding="2"
+                  
+                  />
+
+        <TextBox Name="txtDiameterOfStone1"
+                 Grid.Column="1"
+                 Grid.Row="3"
+                 HorizontalAlignment="Center"
+                 Height="23"
+                 Margin="5,5"
+                 VerticalAlignment="Center"
+                 Width="50"
+                 Padding="2"
+                 IsReadOnly="True"
+                 
+                  />
+
+        <ComboBox Name="cmbStone2"
+                  VerticalAlignment="Center"
+                  Width="200" 
+                  DisplayMemberPath="Stone_Name"
+                  SelectedValuePath="Id"
+                  Grid.Row="4"
+                  Grid.Column="0"
+                  HorizontalAlignment="Center"
+                  Margin="5,5"
+                  SelectionChanged="cmbStone2_SelectionChanged"
+                  Height="25"
+                  Padding="2"
+                  />
+
+        <ComboBox Name="cmbStone3"
+                  VerticalAlignment="Center"
+                  Width="200" 
+                  DisplayMemberPath="Stone_Name"
+                  SelectedValuePath="Id"
+                  Grid.Row="5"
+                  Grid.Column="0"
+                  HorizontalAlignment="Center"
+                  Margin="5,5"
+                  SelectionChanged="cmbStone3_SelectionChanged"
+                  Height="25"
+                  Padding="2"
+                  />
+
+        <ComboBox Name="cmbStone4"
+                  VerticalAlignment="Center"
+                  Width="200" 
+                  DisplayMemberPath="Stone_Name"
+                  SelectedValuePath="Id"
+                  Grid.Row="6"
+                  Grid.Column="0"
+                  HorizontalAlignment="Center"
+                  Margin="5,5"
+                  SelectionChanged="cmbStone4_SelectionChanged"
+                  Height="25"
+                  Padding="2"
+                  />
+
+        <ComboBox Name="cmbStone5"
+                  VerticalAlignment="Center"
+                  Width="200" 
+                  DisplayMemberPath="Stone_Name"
+                  SelectedValuePath="Id"
+                  Grid.Row="7"
+                  Grid.Column="0"
+                  HorizontalAlignment="Center"
+                  Margin="5,5"
+                  SelectionChanged="cmbStone5_SelectionChanged"
+                  Height="25"
+                  Padding="2"
+                  />
+
+        <ComboBox Name="cmbStone6"
+                  VerticalAlignment="Center"
+                  Width="200" 
+                  DisplayMemberPath="Stone_Name"
+                  SelectedValuePath="Id"
+                  Grid.Row="8"
+                  Grid.Column="0"
+                  HorizontalAlignment="Center"
+                  Margin="5,5"
+                  SelectionChanged="cmbStone6_SelectionChanged"
+                  Height="25"
+                  Padding="2"
+                  />
+
+        <ComboBox Name="cmbStone7"
+                  VerticalAlignment="Center"
+                  Width="200" 
+                  DisplayMemberPath="Stone_Name"
+                  SelectedValuePath="Id"
+                  Grid.Row="9"
+                  Grid.Column="0"
+                  HorizontalAlignment="Center"
+                  Margin="5,5"
+                  SelectionChanged="cmbStone7_SelectionChanged"
+                  Height="25"
+                  Padding="2"
+                  />
+
+        <ComboBox Name="cmbStone8"
+                  VerticalAlignment="Center"
+                  Width="200" 
+                  DisplayMemberPath="Stone_Name"
+                  SelectedValuePath="Id"
+                  Grid.Row="10"
+                  Grid.Column="0"
+                  HorizontalAlignment="Center"
+                  Margin="5,5"
+                  SelectionChanged="cmbStone8_SelectionChanged"
+                  Height="25"
+                  Padding="2"
+                  />
+
+        <ComboBox Name="cmbStone9"
+                  VerticalAlignment="Center"
+                  Width="200" 
+                  DisplayMemberPath="Stone_Name"
+                  SelectedValuePath="Id"
+                  Grid.Row="11"
+                  Grid.Column="0"
+                  HorizontalAlignment="Center"
+                  Margin="5,5"
+                  SelectionChanged="cmbStone9_SelectionChanged"
+                  Height="25"
+                  Padding="2"
+                  />
+
+
+        <TextBox Name="txtPricePerStone1"
+                 Grid.Column="3"
+                 Grid.Row="3"
+                 HorizontalAlignment="Center"
+                 Height="23"
+                 Margin="5,5"
+                 VerticalAlignment="Center"
+                 Width="120"
+                 Padding="2"
+                 IsReadOnly="True"
+                 
+                  />
+
+        <TextBox Name="txtTotal1"
+                 Grid.Column="4"
+                 Grid.Row="3"
+                 HorizontalAlignment="Center"
+                 Height="23"
+                 Margin="5,5"
+                 VerticalAlignment="Center"
+                 Width="120"
+                 Padding="2"
+                 IsReadOnly="True"
+                 
+                  />
+
+
+
+
+        <TextBox Name="txtSum"
+                 Grid.Column="4"
+                 Grid.Row="13"
+                 Height="23"
+                 Width="120" 
+                 Margin="5,5"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Center"
+                 HorizontalAlignment="Center"
+                 Padding="2"
+                 
+                 >
+
+        </TextBox>
+
+        <!-- Row 4 -->
+
+
+
+        <TextBox Name="txtDiameterOfStone2"
+                 Grid.Column="1"
+                 Grid.Row="4"
+                 HorizontalAlignment="Center"
+                 Height="23"
+                 Margin="5,5"
+                 VerticalAlignment="Center"
+                 Width="50"
+                 Padding="2"
+                 IsReadOnly="True"/>
+
+        <TextBox Name="txtDiameterOfStone3"
+                 Grid.Column="1"
+                 Grid.Row="5"
+                 HorizontalAlignment="Center"
+                 Height="23"
+                 Margin="5,5"
+                 VerticalAlignment="Center"
+                 Width="50"
+                 Padding="2"
+                 IsReadOnly="True"/>
+
+        <TextBox Name="txtDiameterOfStone4"
+                 Grid.Column="1"
+                 Grid.Row="6"
+                 HorizontalAlignment="Center"
+                 Height="23"
+                 Margin="5,5"
+                 VerticalAlignment="Center"
+                 Width="50"
+                 Padding="2"
+                 IsReadOnly="True"/>
+
+        <TextBox Name="txtDiameterOfStone5"
+                 Grid.Column="1"
+                 Grid.Row="7"
+                 HorizontalAlignment="Center"
+                 Height="23"
+                 Margin="5,5"
+                 VerticalAlignment="Center"
+                 Width="50"
+                 Padding="2"
+                 IsReadOnly="True"/>
+
+        <TextBox Name="txtDiameterOfStone6"
+                 Grid.Column="1"
+                 Grid.Row="8"
+                 HorizontalAlignment="Center"
+                 Height="23"
+                 Margin="5,5"
+                 VerticalAlignment="Center"
+                 Width="50"
+                 Padding="2"
+                 IsReadOnly="True"/>
+
+        <TextBox Name="txtDiameterOfStone7"
+                 Grid.Column="1"
+                 Grid.Row="9"
+                 HorizontalAlignment="Center"
+                 Height="23"
+                 Margin="5,5"
+                 VerticalAlignment="Center"
+                 Width="50"
+                 Padding="2"
+                 IsReadOnly="True"/>
+
+        <TextBox Name="txtDiameterOfStone8"
+                 Grid.Column="1"
+                 Grid.Row="10"
+                 HorizontalAlignment="Center"
+                 Height="23"
+                 Margin="5,5"
+                 VerticalAlignment="Center"
+                 Width="50"
+                 Padding="2"
+                 IsReadOnly="True"/>
+
+        <TextBox Name="txtDiameterOfStone9"
+                 Grid.Column="1"
+                 Grid.Row="11"
+                 HorizontalAlignment="Center"
+                 Height="23"
+                 Margin="5,5"
+                 VerticalAlignment="Center"
+                 Width="50"
+                 Padding="2"
+                 IsReadOnly="True"/>
+
+        <TextBox Name="txtPricePerStone2"
+                 Grid.Column="3"
+                 Grid.Row="4"
+                 HorizontalAlignment="Center"
+                 Height="23"
+                 Margin="5,5"
+                 VerticalAlignment="Center"
+                 Width="120"
+                 Padding="2"
+                 IsReadOnly="True"
+                 />
+
+        <TextBox Name="txtPricePerStone3"
+                 Grid.Column="3"
+                 Grid.Row="5"
+                 HorizontalAlignment="Center"
+                 Height="23"
+                 Margin="5,5"
+                 VerticalAlignment="Center"
+                 Width="120"
+                 Padding="2"
+                 IsReadOnly="True"
+                 />
+
+        <TextBox Name="txtPricePerStone4"
+                 Grid.Column="3"
+                 Grid.Row="6"
+                 HorizontalAlignment="Center"
+                 Height="23"
+                 Margin="5,5"
+                 VerticalAlignment="Center"
+                 Width="120"
+                 Padding="2"
+                 IsReadOnly="True"
+                 />
+
+        <TextBox Name="txtPricePerStone5"
+                 Grid.Column="3"
+                 Grid.Row="7"
+                 HorizontalAlignment="Center"
+                 Height="23"
+                 Margin="5,5"
+                 VerticalAlignment="Center"
+                 Width="120"
+                 Padding="2"
+                 IsReadOnly="True"
+                 />
+
+        <TextBox Name="txtPricePerStone6"
+                 Grid.Column="3"
+                 Grid.Row="8"
+                 HorizontalAlignment="Center"
+                 Height="23"
+                 Margin="5,5"
+                 VerticalAlignment="Center"
+                 Width="120"
+                 Padding="2"
+                 IsReadOnly="True"
+                 />
+
+        <TextBox Name="txtPricePerStone7"
+                 Grid.Column="3"
+                 Grid.Row="9"
+                 HorizontalAlignment="Center"
+                 Height="23"
+                 Margin="5,5"
+                 VerticalAlignment="Center"
+                 Width="120"
+                 Padding="2"
+                 IsReadOnly="True"
+                 />
+
+        <TextBox Name="txtPricePerStone8"
+                 Grid.Column="3"
+                 Grid.Row="10"
+                 HorizontalAlignment="Center"
+                 Height="23"
+                 Margin="5,5"
+                 VerticalAlignment="Center"
+                 Width="120"
+                 Padding="2"
+                 IsReadOnly="True"
+                 />
+
+        <TextBox Name="txtPricePerStone9"
+                 Grid.Column="3"
+                 Grid.Row="11"
+                 HorizontalAlignment="Center"
+                 Height="23"
+                 Margin="5,5"
+                 VerticalAlignment="Center"
+                 Width="120"
+                 Padding="2"
+                 IsReadOnly="True"
+                 />
+
+        <TextBox Name="txtTotal2"
+                 Grid.Column="4"
+                 Grid.Row="4"
+                 HorizontalAlignment="Center"
+                 Height="23"
+                 Margin="5,5"
+                 VerticalAlignment="Center"
+                 Width="120"
+                 Padding="2"
+                 IsReadOnly="True"
+                 />
+
+        <TextBox Name="txtTotal3"
+                 Grid.Column="4"
+                 Grid.Row="5"
+                 HorizontalAlignment="Center"
+                 Height="23"
+                 Margin="5,5"
+                 VerticalAlignment="Center"
+                 Width="120"
+                 Padding="2"
+                 IsReadOnly="True"
+                 />
+
+        <TextBox Name="txtTotal4"
+                 Grid.Column="4"
+                 Grid.Row="6"
+                 HorizontalAlignment="Center"
+                 Height="23"
+                 Margin="5,5"
+                 VerticalAlignment="Center"
+                 Width="120"
+                 Padding="2"
+                 IsReadOnly="True"
+                 />
+
+        <TextBox Name="txtTotal5"
+                 Grid.Column="4"
+                 Grid.Row="7"
+                 HorizontalAlignment="Center"
+                 Height="23"
+                 Margin="5,5"
+                 VerticalAlignment="Center"
+                 Width="120"
+                 Padding="2"
+                 IsReadOnly="True"
+                 />
+
+        <TextBox Name="txtTotal6"
+                 Grid.Column="4"
+                 Grid.Row="8"
+                 HorizontalAlignment="Center"
+                 Height="23"
+                 Margin="5,5"
+                 VerticalAlignment="Center"
+                 Width="120"
+                 Padding="2"
+                 IsReadOnly="True"
+                 />
+
+        <TextBox Name="txtTotal7"
+                 Grid.Column="4"
+                 Grid.Row="9"
+                 HorizontalAlignment="Center"
+                 Height="23"
+                 Margin="5,5"
+                 VerticalAlignment="Center"
+                 Width="120"
+                 Padding="2"
+                 IsReadOnly="True"
+                 />
+
+        <TextBox Name="txtTotal8"
+                 Grid.Column="4"
+                 Grid.Row="10"
+                 HorizontalAlignment="Center"
+                 Height="23"
+                 Margin="5,5"
+                 VerticalAlignment="Center"
+                 Width="120"
+                 Padding="2"
+                 IsReadOnly="True"
+                 />
+
+        <TextBox Name="txtTotal9"
+                 Grid.Column="4"
+                 Grid.Row="11"
+                 HorizontalAlignment="Center"
+                 Height="23"
+                 Margin="5,5"
+                 VerticalAlignment="Center"
+                 Width="120"
+                 Padding="2"
+                 IsReadOnly="True"
+                 />
+
+
+
+        <!-- Row 5 -->
+
+        <Button Name="Calculate"
+                Content="Calculate"
+                Grid.Column="4"
+                Grid.Row="14"
+                HorizontalAlignment="Center"
+                Margin="5,5"
+                VerticalAlignment="Center"
+                Width="119"
+                Padding="2"
+                Click="btnCalculate_Click"/>
+
+        <Button Name="Reset"
+                Content="Reset"
+                Grid.Column="3"
+                Grid.Row="14"
+                HorizontalAlignment="Center"
+                Margin="5,5"
+                VerticalAlignment="Center"
+                Width="119"
+                Padding="2"
+                Click="btnReset_Click"/>
+
+        <Button Name="SaveAs"
+                Content="Save As"
+                Grid.Column="0"
+                Grid.Row="14"
+                HorizontalAlignment="Center"
+                Margin="5,5"
+                VerticalAlignment="Center"
+                Width="119"
+                Padding="2"
+                Click="btnSaveAs_Click"/>
+
+
+    </Grid>
+</UserControl>
