@@ -28,7 +28,7 @@ namespace LNStone.Views
         private void ButtonManzuko_OnClick(object sender, RoutedEventArgs e)
         {
             WebBrowser.Source = new Uri("https://www.manzuko.com", UriKind.Absolute);
-            WebBrowser.ZoomFactor = 0.5;
+            //WebBrowser.ZoomFactor = 0.5;
         }
 
         private void ButtonKamieniolomy_OnClick(object sender, RoutedEventArgs e)

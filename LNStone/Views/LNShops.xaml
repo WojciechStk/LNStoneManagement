@@ -7,12 +7,20 @@
              xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
 
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="800">
+             d:DesignHeight="500" d:DesignWidth="700" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+
+
+
+
     <Grid>
 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
         <DockPanel Margin="10,10,10,100" Width="auto">
-            <wv2:WebView2 x:Name="WebBrowser" Width="800" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Panel.ZIndex="0">
-            
+            <wv2:WebView2 x:Name="WebBrowser" Grid.Column="0" Width="auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Panel.ZIndex="0">
+
             </wv2:WebView2>
 
         </DockPanel>
@@ -24,6 +32,6 @@
 
 
     </Grid>
-    
-    
+
+
 </UserControl>

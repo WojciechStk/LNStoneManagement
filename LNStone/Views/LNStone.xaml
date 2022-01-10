@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LNStone.ViewModels" 
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        mc:Ignorable="d" Height="684.5" Width="912" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        mc:Ignorable="d" Height="684.5" Width="912" ResizeMode="CanResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Window.Resources>
 
         <Storyboard x:Key="OpenMenu">
@@ -30,7 +30,7 @@
         </EventTrigger>
     </Window.Triggers>
     <Grid Background="#FFC6E9AF">
-        <Grid x:Name="GridMain" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="640" Width="852" Margin="0,0,0,-0.2" >
+        <Grid x:Name="GridMain" HorizontalAlignment="Stretch" Margin="60,45,0,0">
 
         </Grid>
 
@@ -46,6 +46,8 @@
                         <Button x:Name="ButtonShops" Content="Shops" Click="ButtonShops_Click"/>
                         <Button x:Name="ButtonAbout" Content="About" Click="ButtonAbout_Click"/>
                         <Separator/>
+                        <Button x:Name="ButtonResizeWindow" Content="Resize Window" Click="ButtonResizeWindow_Click"/>
+
                         <Button x:Name="ButtonCloseWindow" Content="Close" Click="ButtonCloseWindow_Click"/>
                     </StackPanel>
 
@@ -59,7 +61,7 @@
                 <DropShadowEffect BlurRadius="2" ShadowDepth="1" Color="#FFAEAEAE"/>
             </Grid.Effect>
             <StackPanel>
-                <Grid Height="150" Background="#FF182352" RenderTransformOrigin="0.5,0.5">
+                <Grid Height="150" Background="#FF182352" RenderTransformOrigin="0.5,0.5" >
                     <Grid.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>

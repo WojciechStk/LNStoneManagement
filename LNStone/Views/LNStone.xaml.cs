@@ -28,10 +28,6 @@ namespace LNStone.Views
             InitializeComponent();
             FirstPage_Load();
             
-
-
-
-
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -77,6 +73,20 @@ namespace LNStone.Views
             GridMain.Children.Clear();
             UserControl usc = new LNAbout();
             GridMain.Children.Add(usc);
+        }
+
+        private void ButtonResizeWindow_Click(object sender, RoutedEventArgs e)
+        {
+            if (WindowState == WindowState.Normal)
+            {
+                WindowState = WindowState.Maximized;
+                ResizeMode = ResizeMode.NoResize;
+            }
+            else
+            {
+                WindowState = WindowState.Normal;
+                ResizeMode = ResizeMode.NoResize;
+            }
         }
 
         private void FirstPage_Load()
