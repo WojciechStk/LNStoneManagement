@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Data;
-using System.Data.SqlClient;
 using System.Data.Entity.Validation;
+using System.Linq;
 
 namespace LNStone.Models
 {
@@ -16,6 +15,7 @@ namespace LNStone.Models
             ObjContext = new LNStoneDbEntities();
         }
 
+        #region Instruction: GetAll
         public List<StoneDTO> GetAll()
         {
             List<StoneDTO> ObjStoneList = new List<StoneDTO>();
@@ -32,7 +32,9 @@ namespace LNStone.Models
                         DiameterOfStone = stone.Diameter_of_Stone,
                         CordPrice = stone.Cord_Price,
                         AmountOfStone = stone.Amount_of_Stone,
-                        PricePerStone = stone.Price_per_Stone
+                        PricePerStone = stone.Price_per_Stone,
+                        Store = stone.Store,
+                        Faceting = stone.Faceting
                     });
                 }
             }
@@ -42,13 +44,13 @@ namespace LNStone.Models
             }
             return ObjStoneList;
         }
+        #endregion
 
-        
-
+        #region Instruction: Add
         public bool Add(StoneDTO objNewStone)
         {
             bool IsAdded = false;
-            
+
             try
             {
                 var ObjStone = new Stone
@@ -58,19 +60,16 @@ namespace LNStone.Models
                     Diameter_of_Stone = objNewStone.DiameterOfStone,
                     Cord_Price = objNewStone.CordPrice,
                     Amount_of_Stone = objNewStone.AmountOfStone,
-                    Price_per_Stone = objNewStone.PricePerStone
+                    Price_per_Stone = objNewStone.PricePerStone,
+                    Store = objNewStone.Store,
+                    Faceting = objNewStone.Faceting
                 };
-
-
-
                 ObjContext.Stone.Add(ObjStone);
                 var NoOfRowsAffected = ObjContext.SaveChanges();
                 IsAdded = NoOfRowsAffected > 0;
             }
             catch (DbEntityValidationException e)
             {
-                
-
                 foreach (var eve in e.EntityValidationErrors)
                 {
                     Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
@@ -82,10 +81,11 @@ namespace LNStone.Models
                     }
                 }
             }
-
             return IsAdded;
         }
+        #endregion
 
+        #region Instruction: Update
         public bool Update(StoneDTO objStoneToUpdate)
         {
             bool IsUpdated = false;
@@ -93,22 +93,44 @@ namespace LNStone.Models
             try
             {
                 var ObjStone = ObjContext.Stone.Find(objStoneToUpdate.Id);
+
+                if (ObjStone == null)
+                {
+                    throw new ArgumentException("Form cannot be null!");
+                }
+
                 ObjStone.Stone_Name = objStoneToUpdate.StoneName;
                 ObjStone.Diameter_of_Stone = objStoneToUpdate.DiameterOfStone;
                 ObjStone.Cord_Price = objStoneToUpdate.CordPrice;
                 ObjStone.Amount_of_Stone = objStoneToUpdate.AmountOfStone;
                 ObjStone.Price_per_Stone = objStoneToUpdate.PricePerStone;
+                ObjStone.Store = objStoneToUpdate.Store;
+                ObjStone.Faceting = objStoneToUpdate.Faceting;
                 var NoOfRowsAffected = ObjContext.SaveChanges();
                 IsUpdated = NoOfRowsAffected > 0;
+            }
+            catch (DbEntityValidationException e)
+            {
+                foreach (var eve in e.EntityValidationErrors)
+                {
+                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-
             return IsUpdated;
         }
+        #endregion
 
+        #region Instruction: Delete
         public bool Delete(int? id)
         {
             bool IsDeleted = false;
@@ -121,16 +143,13 @@ namespace LNStone.Models
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             return IsDeleted;
         }
+        #endregion
 
-      
-
-
-
+        #region Instruction: View
         public StoneDTO View(int? Id)
         {
             StoneDTO ObjStone = null;
@@ -147,7 +166,9 @@ namespace LNStone.Models
                         DiameterOfStone = ObjStoneToFind.Diameter_of_Stone,
                         CordPrice = ObjStoneToFind.Cord_Price,
                         AmountOfStone = ObjStoneToFind.Amount_of_Stone,
-                        PricePerStone = ObjStoneToFind.Price_per_Stone
+                        PricePerStone = ObjStoneToFind.Price_per_Stone,
+                        Store = ObjStoneToFind.Store,
+                        Faceting = ObjStoneToFind.Faceting
                     };
                 }
             }
@@ -157,8 +178,6 @@ namespace LNStone.Models
             }
             return ObjStone;
         }
-
-
-
+        #endregion
     }
 }

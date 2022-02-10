@@ -6,11 +6,18 @@
              xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
              xmlns:local="clr-namespace:LNStone.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="700">
-    <DockPanel>
-        <wv2:WebView2 Name="webView"
-                  Source="https://www.instagram.com/littlenaturejewellery/" Width="700" Height="600"
-                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-    />
-    </DockPanel>
+             d:DesignHeight="500" d:DesignWidth="700" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <DockPanel Margin="10,10,10,10" Width="auto">
+            <wv2:WebView2 Name="webView"
+                  Source="https://www.instagram.com/littlenaturejewellery/" Width="auto" Height="auto"
+                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"/>
+        </DockPanel>
+    </Grid>
 </UserControl>

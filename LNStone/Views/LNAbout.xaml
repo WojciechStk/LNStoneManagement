@@ -5,23 +5,92 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LNStone.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="700">
+             d:DesignHeight="600" d:DesignWidth="700" Margin="10,10">
     <Grid>
-       
-            <StackPanel Margin="10">
-                <TextBlock Style="{StaticResource MaterialDesignHeadline3TextBlock}">
-        About us
-                </TextBlock>
-                <TextBlock Style="{StaticResource MaterialDesignBody2TextBlock}">
-        software architects builds a ...
-                </TextBlock>
-                <TextBlock>
-        In the long term software architects ...
-                </TextBlock>
-            </StackPanel>
-   
+        <ScrollViewer>
+        <StackPanel Margin="30,30">
 
+                <TextBlock Style="{StaticResource MaterialDesignHeadline4TextBlock}"
+                           TextWrapping="Wrap"
+                           LineStackingStrategy="MaxHeight"
+                           LineHeight="60">
+        ABOUT THE PROGRAM AND THE CREATOR
+            </TextBlock>
+                <TextBlock Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                           TextWrapping="Wrap"
+                           LineStackingStrategy="MaxHeight"
+                           LineHeight="20">
+        Why was this program created?<LineBreak></LineBreak>
+            </TextBlock>
+         
+                <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+                           TextWrapping="Wrap"
+                           LineStackingStrategy="MaxHeight"
+                           LineHeight="20">
+                I wrote this little program with my fiancée in mind.
+                As a hobby, she creates various types of jewelry for friends using semi-precious stones for this purpose,
+                such as: semi-precious and precious stones, surgical steel, threads, strings, cabochons ...
+                state that the manufacturer is limited only by his imagination. And maybe a pocket sometimes.
+                Some of her works can be seen in the "Gallery" tab or through the "Instagram" tab.<LineBreak></LineBreak>
+                </TextBlock>
 
+                <TextBlock Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                           TextWrapping="Wrap"
+                           LineStackingStrategy="MaxHeight"
+                           LineHeight="20">
+        What is this program for?<LineBreak></LineBreak>
+                </TextBlock>
 
+                <TextBlock Style="{StaticResource MaterialDesignSubtitle2TextBlock}"
+                           TextWrapping="Wrap"
+                           LineStackingStrategy="MaxHeight"
+                           LineHeight="30">
+        The general assumption is that this program will allow:
+                </TextBlock>
+
+                <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+                           TextWrapping="Wrap"
+                           LineStackingStrategy="MaxHeight"
+                           LineHeight="30">
+                - creating a database of purchased items,<LineBreak></LineBreak>
+                - calculating the cost of purchasing materials needed to make, for example, a bracelet,<LineBreak></LineBreak>
+                - calculating a margin on sales (it is known that family and friends are always on a low threshold),<LineBreak></LineBreak>
+                - shopping in one of your favorite stores,<LineBreak></LineBreak>
+                - social media management.<LineBreak></LineBreak>
+                </TextBlock>
+
+                <TextBlock Style="{StaticResource MaterialDesignSubtitle2TextBlock}"
+                           TextWrapping="Wrap"
+                           LineStackingStrategy="MaxHeight"
+                           LineHeight="30">
+        I want to add in the near future:
+                </TextBlock>
+
+                <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+                           TextWrapping="Wrap"
+                           LineStackingStrategy="MaxHeight"
+                           LineHeight="30">
+                - the ability to add photos to the gallery,<LineBreak></LineBreak>
+                - photo captions informing what elements were used to make a given jewelery.<LineBreak></LineBreak>
+                </TextBlock>
+
+                <TextBlock Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                           TextWrapping="Wrap"
+                           LineStackingStrategy="MaxHeight"
+                           LineHeight="20">
+        Afterwords.<LineBreak></LineBreak>
+                </TextBlock>
+
+                <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+                           TextWrapping="Wrap"
+                           LineStackingStrategy="MaxHeight"
+                           LineHeight="20">
+                If you have a similar hobby / job and have any suggestions on what could be added to the program or found a bug,
+                please contact:<LineBreak></LineBreak><LineBreak></LineBreak>
+                AdalbertS@protonmail.com
+                </TextBlock>
+                
+        </StackPanel>
+        </ScrollViewer>
     </Grid>
 </UserControl>

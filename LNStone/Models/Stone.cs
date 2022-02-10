@@ -7,12 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LNStone.Models
+namespace LNStone
 {
     using System;
     using System.Collections.Generic;
-  
-
+    
     public partial class Stone
     {
         public int? Id { get; set; }
@@ -21,5 +20,7 @@ namespace LNStone.Models
         public double? Amount_of_Stone { get; set; }
         public double? Price_per_Stone { get; set; }
         public int? Diameter_of_Stone { get; set; }
+        public string Faceting { get; set; }
+        public string Store { get; set; }
     }
 }

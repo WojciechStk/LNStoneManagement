@@ -18,17 +18,20 @@
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="5*"></RowDefinition>
                 <RowDefinition Height="1*"></RowDefinition>
-
             </Grid.RowDefinitions>
-
-            <Image Name="picHolder"
+            
+            <!-- Row 0 -->
+            <!-- Row 1 -->
+                
+            <Image x:Name="picHolder"
                Margin="20,20,20,0"
                Grid.Column="1"
                Grid.Row="1"
                HorizontalAlignment="Stretch"
                Source="/LNStone;component/Images/1.jpg" />
 
-
+            <!-- Row 2 -->
+            
             <Button x:Name="btnBack"
                     Grid.Column="1"
                     Grid.Row="2"
@@ -43,7 +46,7 @@
                     Click="GoBack">
                 <materialDesign:PackIcon Kind="ArrowLeftBoldCircleOutline" Width="40" Height="40"/>
             </Button>
-
+            
             <Button x:Name="btnNext"
                     Grid.Column="1"
                     Grid.Row="2"
@@ -58,9 +61,7 @@
                     Click="GoNext">
                 <materialDesign:PackIcon Kind="ArrowRightBoldCircleOutline" Width="40" Height="40"/>
             </Button>
-
-
+            
         </Grid>
     </Viewbox>
-
 </UserControl>

@@ -1,59 +1,57 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel;
-using LNStone.Models;
-using LNStone.Commands;
 using System.Collections.ObjectModel;
-using System.Data.Entity.Validation;
-using System.Windows.Data;
-using System.Xml.Linq;
-using System.Windows;
-using static System.Net.Mime.MediaTypeNames;
+using System.ComponentModel;
+using LNStone.Commands;
+using LNStone.Models;
 
 
 namespace LNStone.ViewModels
 {
+    ///<summary>
+    /// This class implements INotifyPropertyChanged
+    /// to support one-way and two-way bindings
+    /// (such that the UI element updates when the source
+    /// has been changed dynamically)
+    /// </summary>
+    
     public class StoneViewModel : INotifyPropertyChanged
     {
         #region INotifyPropertyChanged_Implementation
+        // Declare the event
         public event PropertyChangedEventHandler PropertyChanged;
+
+        // Create the OnPropertyChanged method to raise the event
+        // The calling member's name will be used as the parameter.
         private void OnPropertyChanged(string propertyName)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName)); 
         }
         #endregion
 
-        
-
+        #region ObjStoneService
+        // Binding to the database and binding command that can always execute.
         private readonly StoneService ObjStoneService;
+
         public StoneViewModel()
         {
             ObjStoneService = new StoneService();
             LoadData();
-            currentStone = new StoneDTO();
-            saveCommand = new RelayCommand(Save);
-            viewCommand = new RelayCommand(View);
-            updateCommand = new RelayCommand(Update);
-            deleteCommand = new RelayCommand(Delete);
-            clearCommand = new RelayCommand(Clear);
-            
+            _currentStone = new StoneDTO();
+            _saveCommand = new RelayCommand(Save);
+            _viewCommand = new RelayCommand(View);
+            _updateCommand = new RelayCommand(Update);
+            _deleteCommand = new RelayCommand(Delete);
+            _clearCommand = new RelayCommand(Clear);
         }
-
-
-
-
-
-
+        #endregion
 
         #region DisplayOperation
-        private ObservableCollection<StoneDTO> stoneList;
+        private ObservableCollection<StoneDTO> _stoneList;
         public ObservableCollection<StoneDTO> StoneList
         {
-            get { return stoneList; }
-            set { stoneList = value; OnPropertyChanged("StoneList"); }
+            get => _stoneList;
+            set { _stoneList = value; OnPropertyChanged("StoneList"); }
         }
         private void LoadData()
         {
@@ -61,59 +59,40 @@ namespace LNStone.ViewModels
         }
         #endregion
 
-        private StoneDTO currentStone;
-
+        #region StoneAssignmentOperation
+        private StoneDTO _currentStone;
         public StoneDTO CurrentStone
         {
-            get { return currentStone; }
-            set { currentStone = value; OnPropertyChanged("CurrentStone"); }
+            get => _currentStone;
+            set { _currentStone = value; OnPropertyChanged("CurrentStone"); }
         }
-
-        private string message;
-
-        public string Message
-        {
-            get { return message; }
-            set { message = value; OnPropertyChanged("Message"); }
-        }
+        #endregion
 
         #region Save Operation
-        private readonly RelayCommand saveCommand;
-        public RelayCommand SaveCommand
-        {
-            get { return saveCommand; }
-        }
+        private readonly RelayCommand _saveCommand;
+        public RelayCommand SaveCommand => _saveCommand;
+
         public void Save()
         {
             try
             {
                 var IsSave = ObjStoneService.Add(CurrentStone);
                 LoadData();
-                if (IsSave)
-                    Message = "The Item has been saved.";
-                else
-                    Message = "The operation was unsuccessful!";
+                Message = IsSave ? "The Item has been saved." : "Save operation failed.";
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                
-
-
-
+                Message = ex.Message;
             }
-
             CurrentStone = new StoneDTO();
         }
         #endregion
 
         #region Search Operation
-        private readonly RelayCommand viewCommand;
+        private readonly RelayCommand _viewCommand;
+        public RelayCommand ViewCommand => _viewCommand;
 
-        public RelayCommand ViewCommand
-        {
-            get { return viewCommand; }
-        }
         public void View()
         {
             try
@@ -128,6 +107,8 @@ namespace LNStone.ViewModels
                     CurrentStone.AmountOfStone = ObjStone.AmountOfStone;
                     CurrentStone.DiameterOfStone = ObjStone.DiameterOfStone;
                     CurrentStone.PricePerStone = ObjStone.PricePerStone;
+                    CurrentStone.Store = ObjStone.Store;
+                    CurrentStone.Faceting = ObjStone.Faceting;
                 }
                 else
                 {
@@ -139,18 +120,11 @@ namespace LNStone.ViewModels
                 Message = ex.Message;
             }
         }
-
-
-
         #endregion
 
         #region Update Operation
-        private readonly RelayCommand updateCommand;
-
-        public RelayCommand UpdateCommand
-        {
-            get { return updateCommand; }
-        }
+        private readonly RelayCommand _updateCommand;
+        public RelayCommand UpdateCommand => _updateCommand;
 
         public void Update()
         {
@@ -169,20 +143,16 @@ namespace LNStone.ViewModels
             }
             catch (Exception ex)
             {
-
                 Message = ex.Message;
             }
         }
         #endregion
 
         #region Delete Operation
-        private readonly RelayCommand deleteCommand;
+        private readonly RelayCommand _deleteCommand;
 
-        public RelayCommand DeleteCommand
-        {
-            get { return deleteCommand; }
-        }
-
+        public RelayCommand DeleteCommand => _deleteCommand;
+        
         public void Delete()
         {
             try
@@ -192,7 +162,6 @@ namespace LNStone.ViewModels
                 {
                     Message = "Item has been deleted.";
                     LoadData();
-                    
                 }
                 else
                 {
@@ -207,32 +176,26 @@ namespace LNStone.ViewModels
 
         #endregion
 
-        private readonly RelayCommand clearCommand;
+        #region Clear Operation
 
-        public RelayCommand ClearCommand
-        {
-            get { return clearCommand; }
-        }
+        private readonly RelayCommand _clearCommand;
 
-        
+        public RelayCommand ClearCommand => _clearCommand;
 
         public void Clear()
         {
             try
             {
-               
                 if (CurrentStone != null)
                 {
-                    
                     CurrentStone.Id = null;
                     CurrentStone.StoneName = null;
                     CurrentStone.CordPrice = null;
                     CurrentStone.AmountOfStone = null;
                     CurrentStone.DiameterOfStone = null;
                     CurrentStone.PricePerStone = null;
-                   
-                    
-
+                    CurrentStone.Store = null;
+                    CurrentStone.Faceting = null;
                     Message = "The form has been cleared";
                 }
                 else
@@ -240,15 +203,50 @@ namespace LNStone.ViewModels
                     Message = "The form has not been cleared";
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
         }
+        #endregion
 
-        
-        
+        #region MessageOperation
+        private string _message;
+        public string Message
+        {
+            get { return _message; }
+            set { _message = value; OnPropertyChanged("Message"); }
+        }
+        #endregion
 
+        #region StoreList
+        private List<string> _store;
+        public List<string> Store
+        {
+            get
+            {
+                return new List<string>() { "Manzuko", "Kamieniołomy", "Pasart", "Royal-Stone", "Other" };
+            }
+            set
+            {
+                _store = value;
+            }
+        }
+        #endregion
+
+        #region FacetingList
+        private List<string> _faceting;
+        public List<string> Faceting
+        {
+            get
+            {
+                return new List<string>() { "Yes", "No", "Other" };
+            }
+            set
+            {
+                _faceting = value;
+            }
+        }
+        #endregion
     }
 }

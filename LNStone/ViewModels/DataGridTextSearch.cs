@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
-using LNStone.ViewModels;
 
 
 namespace LNStone.ViewModels
@@ -42,10 +37,9 @@ namespace LNStone.ViewModels
         }
     }
 
+    #region SearchValueConverter
     public class SearchValueConverter : IMultiValueConverter
     {
-
-
         public object Convert(object[] values, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             string cellText = values[0] == null ? string.Empty : values[0].ToString();
@@ -58,11 +52,10 @@ namespace LNStone.ViewModels
             return false;
         }
 
-
-
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, System.Globalization.CultureInfo culture)
         {
             return null;
         }
     }
+    #endregion
 }

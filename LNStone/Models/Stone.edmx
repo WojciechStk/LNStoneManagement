@@ -14,7 +14,9 @@
           <Property Name="Cord Price" Type="float" Nullable="false" />
           <Property Name="Amount of Stone" Type="float" Nullable="false" />
           <Property Name="Price per Stone" Type="float" Nullable="false" />
-          <Property Name="Diameter of Stone" Type="float" Nullable="false" />
+          <Property Name="Diameter of Stone" Type="int" Nullable="false" />
+          <Property Name="Faceting" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Store" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityContainer Name="LNStoneDbModelStoreContainer">
           <EntitySet Name="Stone" EntityType="Self.Stone" Schema="dbo" store:Type="Tables" />
@@ -33,6 +35,8 @@
           <Property Name="Amount_of_Stone" Type="Double" Nullable="false" />
           <Property Name="Price_per_Stone" Type="Double" Nullable="false" />
           <Property Name="Diameter_of_Stone" Type="Int32" Nullable="false" />
+          <Property Name="Faceting" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Store" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="LNStoneDbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Stone" EntityType="Self.Stone" />
@@ -46,6 +50,8 @@
           <EntitySetMapping Name="Stone">
             <EntityTypeMapping TypeName="LNStoneDbModel.Stone">
               <MappingFragment StoreEntitySet="Stone">
+                <ScalarProperty Name="Store" ColumnName="Store" />
+                <ScalarProperty Name="Faceting" ColumnName="Faceting" />
                 <ScalarProperty Name="Diameter_of_Stone" ColumnName="Diameter of Stone" />
                 <ScalarProperty Name="Price_per_Stone" ColumnName="Price per Stone" />
                 <ScalarProperty Name="Amount_of_Stone" ColumnName="Amount of Stone" />

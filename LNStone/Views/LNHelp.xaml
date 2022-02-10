@@ -5,11 +5,353 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LNStone.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="700">
-    <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="40,57,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="513" Width="625">
-            How it's work...
-        </TextBlock>
+             d:DesignHeight="600" d:DesignWidth="700" Margin="10,10">
+    <ScrollViewer>
+    <StackPanel Margin="30,30">
+            <Grid x:Name="Help">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                
+                <!-- Row 0 -->
+                
+                <TextBlock Style="{StaticResource MaterialDesignHeadline4TextBlock}"
+                           Grid.Row="0"
+                           TextWrapping="Wrap"
+                           LineStackingStrategy="MaxHeight"
+                           LineHeight="60">
+                HELP PAGE
+                </TextBlock>
+                
+                <!-- Row 1 -->
 
-    </Grid>
+                <StackPanel Grid.Row="1">
+                    <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+                           TextWrapping="Wrap"
+                           LineStackingStrategy="MaxHeight"
+                           LineHeight="20">
+        Below is a short description explaining what is in the application and what you need to run smoothly.<LineBreak></LineBreak>
+                    </TextBlock>
+
+                    <TextBlock Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                           TextWrapping="Wrap"
+                           LineStackingStrategy="MaxHeight"
+                           LineHeight="20">
+                Table of Contents:<LineBreak></LineBreak>
+                    </TextBlock>
+
+                    <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+                           TextWrapping="Wrap"
+                           LineStackingStrategy="MaxHeight"
+                           LineHeight="20">
+                1. Home page<LineBreak></LineBreak>
+                2. Gallery<LineBreak></LineBreak>
+                3. Calculator<LineBreak></LineBreak>
+                4. Database<LineBreak></LineBreak>
+                5. Socialmedia<LineBreak></LineBreak>
+                6. Websites<LineBreak></LineBreak>
+                7. Other information<LineBreak></LineBreak><LineBreak></LineBreak>
+                    </TextBlock>
+
+                </StackPanel>
+
+                <!-- Row 2 -->
+
+                <StackPanel Grid.Row="2">
+                    <TextBlock Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                           TextWrapping="Wrap"
+                           LineStackingStrategy="MaxHeight"
+                           LineHeight="20">
+                1. Home page<LineBreak></LineBreak>
+                    </TextBlock>
+
+                    <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+                           TextWrapping="Wrap"
+                           LineStackingStrategy="MaxHeight"
+                           LineHeight="20">
+                At the moment, the home page is only a showcase.<LineBreak></LineBreak>
+                        Perhaps some specific functions will be found here in the future.<LineBreak></LineBreak><LineBreak></LineBreak>
+                The most important information:<LineBreak></LineBreak><LineBreak></LineBreak>
+                In the upper left corner of the program there is a button (three lines) to expand the Main Menu,
+                        where we can navigate to specific pages in the program, such as:<LineBreak></LineBreak><LineBreak></LineBreak>
+                - Homepage<LineBreak></LineBreak>
+                - Gallery<LineBreak></LineBreak>
+                - Calculator<LineBreak></LineBreak>
+                - Database<LineBreak></LineBreak>
+                - Help<LineBreak></LineBreak><LineBreak></LineBreak>
+                
+                In the upper right corner of the program there is a button (three dots) to expand the Additional Menu,
+                        where we can navigate to specific pages or functions in the program, such as:<LineBreak></LineBreak><LineBreak></LineBreak>
+                - Instagram<LineBreak></LineBreak>
+                - Shops<LineBreak></LineBreak>
+                - About program<LineBreak></LineBreak>
+                - Resize the window<LineBreak></LineBreak>
+                - Close it<LineBreak></LineBreak>
+                    </TextBlock>
+
+                    <Image HorizontalAlignment="Center"
+                           Grid.Column="0"
+                           Grid.Row="2"
+                           Margin="100,10,100,10"
+                           VerticalAlignment="Center"
+                           Source="/LNStone;component/Images/1_help.png"/>
+
+                    <Image HorizontalAlignment="Center"
+                           Grid.Column="0"
+                           Grid.Row="5"
+                           Margin="100,10,100,10"
+                           VerticalAlignment="Center"
+                           Source="/LNStone;component/Images/2_help.png"/>
+                </StackPanel>
+                
+                <!-- Row 3 -->
+
+                <StackPanel Grid.Row="3">
+                    <TextBlock Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                           TextWrapping="Wrap"
+                           LineStackingStrategy="MaxHeight"
+                           LineHeight="20">
+                2. Gallery<LineBreak></LineBreak>
+                    </TextBlock>
+
+                    <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+                           TextWrapping="Wrap"
+                           LineStackingStrategy="MaxHeight"
+                           LineHeight="20">
+                In the gallery, we can view homemade jewelry. Thanks to the navigation buttons under the photos,
+                        we have the ability to freely browse photos forward and backward. <LineBreak></LineBreak>
+                    </TextBlock>
+                    
+                    <Image HorizontalAlignment="Center"
+                           Grid.Column="0"
+                           Grid.Row="5"
+                           Margin="100,10,100,10"
+                           VerticalAlignment="Center"
+                           Source="/LNStone;component/Images/3_help.png"/>
+                    
+                </StackPanel>
+
+                <!-- Row 4 -->
+
+                <StackPanel Grid.Row="4">
+                <TextBlock Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                           TextWrapping="Wrap"
+                           LineStackingStrategy="MaxHeight"
+                           LineHeight="20">
+                3. Calculator<LineBreak></LineBreak>
+                </TextBlock>
+
+                <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+                           TextWrapping="Wrap"
+                           LineStackingStrategy="MaxHeight"
+                           LineHeight="20">
+                A calculator is some form of invoice. When there is already an item in the database,
+                    you can add it here by clicking on the drop-down list. After selecting an item by its name,
+                    the data assigned to it, such as "Diameter", "Price per stone", "Faceting", or "Store",
+                    are retrieved from the database and inserted into the appropriate fields.<LineBreak></LineBreak>
+
+                The only value we choose ourselves is "Quantity", that is the amount of a given material
+                    (implicitly a given jewelery stone).<LineBreak></LineBreak><LineBreak></LineBreak>
+
+                Function buttons (from the top):<LineBreak></LineBreak><LineBreak></LineBreak>
+
+                - Calculate<LineBreak></LineBreak>
+
+                After selecting "Quantity" and pressing the "Calculate" button, we will get the "Total Price"
+                    for the previously selected item, and if we have selected more items - I will summarize them.<LineBreak></LineBreak>
+
+                The situation is similar when selecting the "Margin" amount - all amounts add up and we get the "Sum" result.<LineBreak></LineBreak><LineBreak></LineBreak>
+
+                - Clear<LineBreak></LineBreak>
+
+                The button for clearing the form returns it to its initial state.<LineBreak></LineBreak><LineBreak></LineBreak>
+
+                - Print<LineBreak></LineBreak>
+
+                Button for printing a previously completed page, e.g. for archiving.<LineBreak></LineBreak>
+
+                A large text field at the bottom of the page is used to write notes, it can be especially useful in the
+                    case of a large number of materials inserted, or comments on the quality of products. <LineBreak></LineBreak>
+                </TextBlock>
+
+                <Image HorizontalAlignment="Center"
+                           Grid.Column="0"
+                           Grid.Row="5"
+                           Margin="100,10,100,10"
+                           VerticalAlignment="Center"
+                           Source="/LNStone;component/Images/4_help.png"/>
+
+        </StackPanel>
+        
+                <!-- Row 5 -->
+
+                <StackPanel Grid.Row="5">
+                    <TextBlock Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                           TextWrapping="Wrap"
+                           LineStackingStrategy="MaxHeight"
+                           LineHeight="20">
+                4. Database<LineBreak></LineBreak>
+                    </TextBlock>
+
+                    <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+                           TextWrapping="Wrap"
+                           LineStackingStrategy="MaxHeight"
+                           LineHeight="20">
+            The database page in the upper part contains fields for adding new items (you cannot leave blank fields).
+                        In the central part, we have an operation notification window, which informs us, for example,
+                        whether the saving to the database was successful. <LineBreak></LineBreak>At the bottom of the page,
+                        we have a preview of the database itself with a search function and function buttons.<LineBreak></LineBreak><LineBreak></LineBreak>
+
+            Function buttons (from the top):<LineBreak></LineBreak><LineBreak></LineBreak>
+
+            - Save<LineBreak></LineBreak>
+
+            Footnote used to write down the subject previously completed above. For the record,
+                        the most important thing is to assign a numeric identifier "Id",
+                        which cannot be overwritten with another element added later (exception: "Update").<LineBreak></LineBreak><LineBreak></LineBreak>
+
+            - Search<LineBreak></LineBreak>
+
+            Button for searching an item by its "Id" identifier. After entering the required "Id" in the "Enter Id" field,
+                        press the "Search" button and the program itself fills in the empty fields with data.
+                        This function is mainly used to update the data of an element (see: "Update").<LineBreak></LineBreak><LineBreak></LineBreak>
+
+            - Update<LineBreak></LineBreak>
+
+            Button for updating an item in the database. When we call the element using "Search" through "Id",
+                        we can make changes in other fields (except for the "Id" number - this one remains unchanged).
+                        When we make changes, the "Update" button will update this element in the database with the changed data.<LineBreak></LineBreak><LineBreak></LineBreak>
+
+            - Clear<LineBreak></LineBreak>
+
+            Button for deleting an item. After calling an item via "Id" (see: "Search"), we can use this button to remove it
+                        from the database.<LineBreak></LineBreak><LineBreak></LineBreak>
+                        
+            Attention! Once an item has been deleted from the database, it cannot be restored to it.<LineBreak></LineBreak><LineBreak></LineBreak>
+            Attention! At the moment, unfortunately, there is a "hole" in the "Id" after removing the item,
+                        an update should be released soon.<LineBreak></LineBreak><LineBreak></LineBreak>
+
+            - Clear<LineBreak></LineBreak>
+
+            The button for clearing the fields of a new element returns it to its initial state.<LineBreak></LineBreak><LineBreak></LineBreak>
+
+            Search Bar:<LineBreak></LineBreak>
+
+            There is a so-called "Search bar" above the database. Thanks to it, after entering any string of characters
+                        from the name of the element, it will be highlighted in yellow in the database.<LineBreak></LineBreak>
+                    </TextBlock>
+
+                    <Image HorizontalAlignment="Center"
+                           Grid.Column="0"
+                           Grid.Row="5"
+                           Margin="100,10,100,10"
+                           VerticalAlignment="Center"
+                           Source="/LNStone;component/Images/5_help.png"/>
+
+                    <Image HorizontalAlignment="Center"
+                           Grid.Column="0"
+                           Grid.Row="5"
+                           Margin="100,10,100,10"
+                           VerticalAlignment="Center"
+                           Source="/LNStone;component/Images/6_help.png"/>
+                </StackPanel>
+
+                <!-- Row 6 -->
+
+                <StackPanel Grid.Row="6">
+                    <TextBlock Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                           TextWrapping="Wrap"
+                           LineStackingStrategy="MaxHeight"
+                           LineHeight="20">
+                5. Socialmedia<LineBreak></LineBreak>
+                    </TextBlock>
+
+                    <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+                           TextWrapping="Wrap"
+                           LineStackingStrategy="MaxHeight"
+                           LineHeight="20">
+                    A page containing an embedded Instagram profile. <LineBreak></LineBreak>
+                    </TextBlock>
+
+                    <Image HorizontalAlignment="Center"
+                           Grid.Column="0"
+                           Grid.Row="5"
+                           Margin="100,10,100,10"
+                           VerticalAlignment="Center"
+                           Source="/LNStone;component/Images/7_help.png"/>
+                </StackPanel>
+                
+                <!-- Row 7 -->
+                <StackPanel Grid.Row="7">
+                    <TextBlock Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                           TextWrapping="Wrap"
+                           LineStackingStrategy="MaxHeight"
+                           LineHeight="20">
+                6. Websites<LineBreak></LineBreak>
+                    </TextBlock>
+
+                    <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+                           TextWrapping="Wrap"
+                           LineStackingStrategy="MaxHeight"
+                           LineHeight="20">
+                A page with buttons that open individual pages about home jewelry. The Resize Window option is very helpful here. <LineBreak></LineBreak>
+                    </TextBlock>
+
+                    <Image HorizontalAlignment="Center"
+                           Grid.Column="0"
+                           Grid.Row="5"
+                           Margin="100,10,100,10"
+                           VerticalAlignment="Center"
+                           Source="/LNStone;component/Images/8_help.png"/>
+
+                    <Image HorizontalAlignment="Center"
+                           Grid.Column="0"
+                           Grid.Row="5"
+                           Margin="100,10,100,10"
+                           VerticalAlignment="Center"
+                           Source="/LNStone;component/Images/9_help.png"/>
+                </StackPanel>
+                
+                <!-- Row 8 -->
+
+                <StackPanel Grid.Row="8">
+                    <TextBlock Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                           TextWrapping="Wrap"
+                           LineStackingStrategy="MaxHeight"
+                           LineHeight="20">
+                7. Other information<LineBreak></LineBreak>
+                    </TextBlock>
+
+                    <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+                           TextWrapping="Wrap"
+                           LineStackingStrategy="MaxHeight"
+                           LineHeight="20">
+                Attention!<LineBreak></LineBreak><LineBreak></LineBreak>
+
+                - for the correct operation of the "Instagram" and "Stores" pages, the Microsoft Edge browser,
+                        updated to the latest version, must be installed on your computer. Furthermore,
+                        it is necessary to install WebView2 Runtime.<LineBreak></LineBreak><LineBreak></LineBreak>
+
+                - for the correct operation of the database it is necessary to set the local server in "App.config"
+                        (data source = DESKTOP - ####### \ MYSQLSERVER1).<LineBreak></LineBreak><LineBreak></LineBreak>
+                    // EntityFramework, Version=6.0.0.0<LineBreak></LineBreak>
+                    // SupportedRuntime version="v4.0" sku=".NETFramework,Version=v4.8"
+                    </TextBlock>
+                </StackPanel>
+            </Grid>
+    </StackPanel>
+    </ScrollViewer>
 </UserControl>

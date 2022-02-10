@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LNStone.ViewModels;
+using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace LNStone.Views
 {
@@ -20,37 +11,44 @@ namespace LNStone.Views
     /// </summary>
     public partial class LNGallery : UserControl
     {
-        
-            int i = 1;
+        private readonly GalleryViewModel ViewModel;
 
-            public LNGallery()
+        public LNGallery()
+        {
+            InitializeComponent();
+            ViewModel = new GalleryViewModel();
+            DataContext = ViewModel;
+        }
+
+
+
+        //Move from code-behind
+        int i = 1;
+
+        #region Function: GoBack
+        private void GoBack(object sender, RoutedEventArgs e)
+        {
+            i--;
+
+            if (i < 1)
             {
-                InitializeComponent();
+                i = 20;
             }
+            picHolder.Source = new BitmapImage(new Uri(@"/LNStone;component/Images/" + i + ".jpg", UriKind.Relative));
+        }
+        #endregion
 
-            private void GoBack(object sender, RoutedEventArgs e)
+        #region Function: GoNext
+        private void GoNext(object sender, RoutedEventArgs e)
+        {
+            i++;
+
+            if (i > 20)
             {
-                i--;
-
-                if (i < 1)
-                {
-                    i = 20;
-                }
-
-                picHolder.Source = new BitmapImage(new Uri(@"/LNStone;component/Images/" + i + ".jpg", UriKind.Relative));
+                i = 1;
             }
-
-            private void GoNext(object sender, RoutedEventArgs e)
-            {
-                i++;
-
-                if (i > 20)
-                {
-                    i = 1;
-                }
-
-                picHolder.Source = new BitmapImage(new Uri(@"/LNStone;component/Images/" + i + ".jpg", UriKind.Relative));
-            }
-        
+            picHolder.Source = new BitmapImage(new Uri(@"/LNStone;component/Images/" + i + ".jpg", UriKind.Relative));
+        }
+        #endregion
     }
 }

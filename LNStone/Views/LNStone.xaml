@@ -34,12 +34,12 @@
 
         </Grid>
 
-        <Grid Height="45" VerticalAlignment="Top" Background="#FF182352" MouseDown="Window_MouseDown">
+        <Grid Height="45" VerticalAlignment="Top" Background="#215732" MouseDown="Window_MouseDown">
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="#FFACACAC"/>
             </Grid.Effect>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <materialDesign:PopupBox Foreground="#FF5C99D6" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="10">
+                <materialDesign:PopupBox Foreground="#FFC6E9AF" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="10">
 
                     <StackPanel Width="150">
                         <Button x:Name="ButtonInstagram" Content="Instagram" Click="ButtonInstagram_Click"/>
@@ -56,12 +56,12 @@
 
             <TextBlock HorizontalAlignment="Center" Foreground="#FFC6E9AF" VerticalAlignment="Center" FontSize="22">LN STONE MANAGEMENT</TextBlock>
         </Grid>
-        <Grid x:Name="GridMenu" Width="60" HorizontalAlignment="Left" Background="#FF182352" Margin="0,0,0,-0.2">
+        <Grid x:Name="GridMenu" Width="60" HorizontalAlignment="Left" Background="#215732" Margin="0,0,0,-0.2">
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="2" ShadowDepth="1" Color="#FFAEAEAE"/>
             </Grid.Effect>
             <StackPanel>
-                <Grid Height="150" Background="#FF182352" RenderTransformOrigin="0.5,0.5" >
+                <Grid Height="150" Background="#215732" RenderTransformOrigin="0.5,0.5" >
                     <Grid.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -70,18 +70,18 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </Grid.RenderTransform>
-                    <Button x:Name="ButtonOpenMenu" Height="60" Width="60" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF5C99D6" Click="ButtonOpenMenu_Click">
+                    <Button x:Name="ButtonOpenMenu" Height="60" Width="60" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFC6E9AF" Click="ButtonOpenMenu_Click">
                         <materialDesign:PackIcon Kind="Menu" Width="25" Height="25"/>
                     </Button>
-                    <Button x:Name="ButtonCloseMenu" Visibility="Collapsed" Height="60" Width="60" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF5C99D6" Click="ButtonCloseMenu_Click">
+                    <Button x:Name="ButtonCloseMenu" Visibility="Collapsed" Height="60" Width="60" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFC6E9AF" Click="ButtonCloseMenu_Click">
                         <materialDesign:PackIcon Kind="ArrowLeft" Width="25" Height="25"/>
                     </Button>
 
-                    <Image x:Name="Logo" Width="45" Height="45" Margin="4,0,4,20" VerticalAlignment="Bottom" Source="LNLogoSmall.png"/>
+                    <Image x:Name="Logo" Width="45" Height="45" Margin="4,0,4,20" VerticalAlignment="Bottom" Source="/LNStone;component/Images/LNLogoSmall.png"/>
                 </Grid>
 
 
-                <ListView x:Name="ListViewMenu" Foreground="#FF5C99D6" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListViewMenu_SelectionChanged">
+                <ListView x:Name="ListViewMenu" Foreground="#FFC6E9AF" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListViewMenu_SelectionChanged">
                     <ListViewItem x:Name="ItemHome" Height="60">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Home" Height="25" Width="25" Margin="10"/>
