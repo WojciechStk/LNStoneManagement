@@ -1,4 +1,4 @@
-# LNStone
+# LNStoneManagement
 Why was this program created?
 
 I wrote this little program with my fiancée in mind.
